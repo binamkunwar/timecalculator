@@ -3,6 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        .wrapper{
+            background: linear-gradient(rgba(128, 0, 128, 0.697), rgba(208, 7, 41, 0.472));
+            min-height: 100vh;
+        }
+
+        .table{
+         --bs-table-bg:transparent;
+
+        }
+
+        
+    </style>
     <title>Time calculator</title>
 
     <!-- bootstrap cdn -->
@@ -12,7 +26,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
   <body>
-<button class="btn btn-danger"> click me  <i class="fa-solid fa-house"></i></button>
-    timeee
+    <div class="wrapper pt-5">
+        <!-- title -->
+        <div class="container">
+            <h1 class="text-center">Time Calculator </h1>
+
+        <!-- form -->
+         <form 
+         onsubmit="handleOnSubmit(this)"
+         action="javascript:void(0)"
+         class="border p-5 rounded shadow-lg mt-5">
+            <div class="row g-2">
+                <div class="col-md-7">
+                    <input type="text" class="form-control" placeholder=" Task" aria-label="task" name="task" id ="task">
+                </div>
+               <div class="col-md-2">
+                  <input type="number" class="form-control" placeholder="Hours" aria-label="hours" name="hours" min="1" id="hours">
+
+   
+              </div>
+       <div class="col-md-3 d-grid">
+        <button class="btn btn-primary">Add New Task</button>
+    </div>
+</div>
+         </form>
+
+
+
+        <!-- tables -->
+        <div class="row mt-5">
+            <div class="col-md">
+                <h3 class="text-center ">Entry list</h3> 
+            
+            
+
+        <!--Entry list table  -->
+
+        <table class="table table-striped table-hover border">
+  <tbody id="entryList">
+  </tbody>
+  
+</table>
+</div>
+
+        <div class="col-md">
+                <h3 class="text-center">Bad list</h3> 
+            
+            
+
+        <!--Bad list table  -->
+
+        <table class="table table-striped table-hover border">
+ 
+  <tbody>
+    <tr>
+      <td >1</td>
+      <td>Sleeping</td>
+      <td>40</td>
+      <td class="text-end">
+        <button class="btn btn-warning"><i class="fa-solid fa-circle-arrow-left"></i></button>
+        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+
+
+      </td>
+    </tr>
+   
+    
+  </tbody>
+  
+</table>
+
+<div class="alert alert-sucess">You could have saved = 50hrs</div>
+</div>
+        </div>
+<div class="alert alert-sucess">The total hours=10 hrs</div>
+   </div>
+
+    </div>
+
+
+    <script src="./script.js"></script>
   </body>
 </html>
